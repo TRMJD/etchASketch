@@ -1,11 +1,13 @@
 console.log("Hello World!");
 
 //create the 16x16 grid
+const drawArea = document.getElementById("drawArea");
 function createGrid(gridSizeNumber) {
-    const middle = document.getElementById("drawArea");
+    drawArea.replaceChildren();
     for (let i = 0; i < gridSizeNumber; i++) {
         const row = document.createElement("div");
         row.className = "row";
+        // row.textContent = "row #" + i;
         for (let x = 1; x <= gridSizeNumber; x++) {
             const cell = document.createElement("div");
             cell.className = "gridsquares";
@@ -15,16 +17,23 @@ function createGrid(gridSizeNumber) {
             })
             row.appendChild(cell);
         }
-        middle.appendChild(row);
+        drawArea.appendChild(row);
     }
 }
 
 //change grid size button
 const gridSizeBtn = document.getElementById("gridSizeBtn");
 gridSizeBtn.onclick = (event) => {
+    // clearGrid();
     let gridSizeNumber = prompt("Enter the grid size number");
     createGrid(gridSizeNumber);
 
+}
+
+//clear button
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.onclick = (event) => {
+    
 }
 
 
