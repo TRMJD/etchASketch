@@ -7,7 +7,6 @@ function createGrid(gridSizeNumber) {
     for (let i = 0; i < gridSizeNumber; i++) {
         const row = document.createElement("div");
         row.className = "row";
-        // row.textContent = "row #" + i;
         for (let x = 1; x <= gridSizeNumber; x++) {
             const cell = document.createElement("div");
             cell.className = "gridsquares";
@@ -24,15 +23,17 @@ function createGrid(gridSizeNumber) {
 //change grid size button
 const gridSizeBtn = document.getElementById("gridSizeBtn");
 gridSizeBtn.onclick = (event) => {
-    // clearGrid();
-    let gridSizeNumber = prompt("Enter the grid size number");
-    createGrid(gridSizeNumber);
-
+    let gridSizeNumber = prompt("Enter the grid size number less than 64");
+    if (gridSizeNumber > 64) {
+        console.log("Too Big!")
+    }
+    else createGrid(gridSizeNumber);
 }
 
 //clear button
 const clearBtn = document.getElementById("clearBtn");
 clearBtn.onclick = (event) => {
+    createGrid(gridSizeNumber);
     
 }
 
