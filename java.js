@@ -10,6 +10,7 @@ function createGrid(gridSizeNumber) {
         for (let x = 1; x <= gridSizeNumber; x++) {
             const cell = document.createElement("div");
             cell.className = "gridsquares";
+            cell.textContent = x;
             //hover effect 
             cell.addEventListener('mouseover', (event) => {
                 cell.style.backgroundColor = 'red';

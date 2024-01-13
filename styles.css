@@ -21,8 +21,9 @@ body {
 
 #drawArea {
     display: flex;
-    flex-direction: row;
-    justify-content: center; 
+    flex-flow: row wrap;
+    box-sizing: content-box;
+    /* justify-content: center;  */
     margin-top: 30px;
     border-style: solid;
     border-color: red;
@@ -42,16 +43,19 @@ button {
     margin: 10px;
 }  
 
-/* .row {
-    display: inline-flex;
+.row {
+    display: flex;
     flex-direction: column;
-    margin-top: 20px;
-
-} */
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: aqua;
+    flex: 1;
+}  
 .gridsquares {
-    display: flexbox;
+    
     border-style: solid;
     border-width: 1px;
-    height: 20px;
-    width: 20px;    
+    flex: 1; 
+    height: auto;
+    width: auto;
 }
