@@ -10,7 +10,6 @@ function createGrid(gridSizeNumber) {
         for (let x = 1; x <= gridSizeNumber; x++) {
             const cell = document.createElement("div");
             cell.className = "gridsquares";
-            cell.textContent = x;
             //hover effect 
             cell.addEventListener('mouseover', (event) => {
                 cell.style.backgroundColor = 'red';
@@ -26,7 +25,7 @@ const gridSizeBtn = document.getElementById("gridSizeBtn");
 gridSizeBtn.onclick = (event) => {
     let gridSizeNumber = prompt("Enter the grid size number less than 64");
     if (gridSizeNumber > 64) {
-        console.log("Too Big!")
+        alert("Too Big!");
     }
     else createGrid(gridSizeNumber);
 }
