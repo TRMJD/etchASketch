@@ -1,5 +1,6 @@
 console.log("Hello World!");
 
+let color = "black";
 //create the 16x16 grid
 const drawArea = document.getElementById("drawArea");
 function createGrid(gridSizeNumber) {
@@ -12,7 +13,7 @@ function createGrid(gridSizeNumber) {
             cell.className = "gridsquares";
             //hover effect 
             cell.addEventListener('mouseover', (event) => {
-                cell.style.backgroundColor = 'red';
+                cell.style.backgroundColor = color.toLowerCase();
             })
             row.appendChild(cell);
         }
@@ -30,13 +31,23 @@ gridSizeBtn.onclick = (event) => {
     else createGrid(gridSizeNumber);
 }
 
-//clear button
-const clearBtn = document.getElementById("clearBtn");
-clearBtn.onclick = (event) => {
+//reset button
+const resetBtn = document.getElementById("resetBtn");
+resetBtn.onclick = (event) => {
     createGrid(gridSizeNumber);
     
 }
 
+//color button
+const colorBtn = document.getElementById("colorBtn");
+colorBtn.onclick = (event) => {
+    let userColorInput = prompt("Enter the Name of the Color")
+    if (userColorInput === null || userColorInput == "") {
+        color = color;
+    } else {
+        color = userColorInput;
+    }
+}
 
 
 document.addEventListener('onload', createGrid(gridSizeNumber = 16));
